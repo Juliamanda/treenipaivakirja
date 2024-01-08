@@ -1,5 +1,6 @@
-import { FloatingButton } from '../../shared/buttons'
+import { ButtonContainer } from '../../shared/buttons'
 import Content from '../Content'
+import { FloatingButton } from '../../shared/buttons'
 import Header from '../Header'
 import Item from '../Item'
 import Menu from '../Menu'
@@ -8,21 +9,22 @@ import styles from './App.module.scss'
 function App() {
 
   return (
-    <>
-      <div className={styles.app}>
-        <Header />
-        <Content>
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <FloatingButton secondary>+</FloatingButton>
-        </Content>     
-        <Menu />
-      </div>
-    </>
-  )
-
+      <>
+        <ButtonContainer>
+        <div className={styles.app}>
+          <Header />
+          <Content>
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <FloatingButton secondary>+</FloatingButton>
+          </Content>
+          <Menu />
+        </div>
+        </ButtonContainer>
+      </>
+    )  
 }
 
 export default App
