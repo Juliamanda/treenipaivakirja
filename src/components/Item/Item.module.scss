@@ -1,0 +1,22 @@
+.item_data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0.75rem;
+  }
+
+  // Nämä määrittelevät tapahtuman tekstiväriksi harmaan ja tapahtuman alapuolelle ohuen vaakaviivan.
+.item {
+    color: #696963;
+    border-bottom: 1px solid #C4C4C0;
+  }
+
+  // Tämä asettelee oikealla puolella olevien elementtien tasauksen oikeaan reunaan.
+.item_weight, .item_repeat {
+    text-align: right;
+  } 
+
+// Tämä määrittelee tapahtuman ensimmäisen rivin tekstiväriksi mustan sekä lihavoi tekstin.
+.item_type, .item_weight {
+    color: #000000;
+    font-weight: bold;
+  }
