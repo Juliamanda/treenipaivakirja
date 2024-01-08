@@ -11,3 +11,9 @@
     align-items: center;
   }
   
+// Määrittelee menu-luokan alla olevien div-elementtien käyttämään Flexbox-asemointia ja keskittämään sisältönsä pystysuunnassa keskelle.
+.menu > div {
+    display: flex;
+    align-items: center;
+  }
+  

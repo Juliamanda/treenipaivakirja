@@ -1,12 +1,15 @@
 import styles from './Menu.module.scss'
+import { MdOutlineSettings } from "react-icons/md";
+import { MdShowChart } from "react-icons/md";
+import { MdHome } from "react-icons/md";
 
 function Menu() {
 
   return (
     <div className={styles.menu}>
-      <div>list</div>
-      <div>stats</div>
-      <div>profile</div>
+      <div><MdHome /></div>
+      <div><MdShowChart /></div>
+      <div><MdOutlineSettings /></div>
     </div>
   )
 
