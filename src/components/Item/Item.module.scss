@@ -1,18 +1,19 @@
 @import '../../assets/styles/_config.scss';
 
 .item_data {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0.75rem;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.75rem;
+  flex: 1;
+}
 
-  // Nämä määrittelevät tapahtuman tekstiväriksi ja tapahtuman alapuolelle ohuen vaakaviivan.
-  // Värit haetaan muuttujien arvoista
+// Nämä määrittelevät tapahtuman tekstiväriksi ja tapahtuman alapuolelle ohuen vaakaviivan.
+// Värit haetaan muuttujien arvoista
 .item {
     color: $color-neutral-dark;
     border-bottom: 1px solid $color-neutral-light;
+    display: flex;
   }
-  
 
   // Tämä asettelee oikealla puolella olevien elementtien tasauksen oikeaan reunaan.
 .item_weight, .item_repeat {
@@ -24,3 +25,21 @@
     color: $color-neutral-darkest;
     font-weight: bold;
   }
+
+// Linkkialueen ulkoasun määritykset
+.item_edit {
+    max-width: 2rem;
+    min-width: 2rem;
+    background-color: $color-neutral-lighter;
+    color: $color-neutral-dark;
+    font-size: 1.75rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+.item:hover .item_edit {
+    display: flex;
+  }
+    

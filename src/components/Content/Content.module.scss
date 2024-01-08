@@ -1,6 +1,6 @@
 @import '../../assets/styles/_config.scss'; 
 
-// määrittelee selaimen lisäämään pystysuuntaisen vierityspalkin tarvittaessa
+// Määrittelee selaimen lisäämään pystysuuntaisen vierityspalkin tarvittaessa
 .content {
     overflow-y: auto;
     scrollbar-color: $color-neutral-light $color-neutral-lighter;
