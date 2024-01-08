@@ -1,14 +1,18 @@
+@import '../../assets/styles/_config.scss';
+
 .item_data {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0.75rem;
   }
 
-  // Nämä määrittelevät tapahtuman tekstiväriksi harmaan ja tapahtuman alapuolelle ohuen vaakaviivan.
+  // Nämä määrittelevät tapahtuman tekstiväriksi ja tapahtuman alapuolelle ohuen vaakaviivan.
+  // Värit haetaan muuttujien arvoista
 .item {
-    color: #696963;
-    border-bottom: 1px solid #C4C4C0;
+    color: $color-neutral-dark;
+    border-bottom: 1px solid $color-neutral-light;
   }
+  
 
   // Tämä asettelee oikealla puolella olevien elementtien tasauksen oikeaan reunaan.
 .item_weight, .item_repeat {
@@ -17,6 +21,6 @@
 
 // Tämä määrittelee tapahtuman ensimmäisen rivin tekstiväriksi mustan sekä lihavoi tekstin.
 .item_type, .item_weight {
-    color: #000000;
+    color: $color-neutral-darkest;
     font-weight: bold;
   }
