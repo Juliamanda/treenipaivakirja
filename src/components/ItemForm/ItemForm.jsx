@@ -1,15 +1,34 @@
+import Button from '../../shared/buttons'
 import styles from './ItemForm.module.scss'
+import useForm from '../../shared/useform/useform'
 
 function ItemForm(props) {
+  const submit = () => {
+    console.log(values)
+    alert("SUBMIT")
+  }
+  const initialState = {
+    type: "",
+    repeat: "",
+    weight: "",
+    set: "",
+    date: "",
+    time: ""
+  }
+  const {values, handleChange, handleSubmit } = useForm(submit, initialState, false)
+  
+  const handleCancel = () => {
+    alert('CANCEL') 
+  }
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className={styles.itemform}>
         <div className={styles.itemform_row}>
             <div>
             <label htmlFor='type'>Liike</label>
-              <select name='type'>
+              <select name='type' onChange={handleChange} value={values.type}>
                 <option>Maastaveto</option>
                 <option>Penkkipunnerrus</option>
                 <option>Ylätalja</option>
@@ -20,27 +39,35 @@ function ItemForm(props) {
           <div className={styles.itemform_row}>
             <div>
               <label htmlFor='repeat'>Toistot</label>
-              <input type='text' name='repeat' />
+              <input type='text' name='repeat' onChange={handleChange} value={values.repeat}/>
             </div>
             <div>
               <label htmlFor='weight'>Painot</label>
-              <input type='text' name='weight' />
+              <input type='text' name='weight' onChange={handleChange} value={values.weight} />
             </div>
           </div>
           <div className={styles.itemform_row}>
           <div>
               <label htmlFor='set'>Sarjat</label>
-              <input type='text' name='set' />
+              <input type='text' name='set' onChange={handleChange} value={values.set}/>
             </div>
           </div>
           <div className={styles.itemform_row}>
           <div>
               <label htmlFor='date'>Päivämäärä</label>
-              <input type='date' name='date' />
+              <input type='date' name='date' onChange={handleChange} value={values.date} />
             </div>
             <div>
               <label htmlFor='time'>Aloitusaika</label>
-              <input type='text' name='time' />
+              <input type='text' name='time' onChange={handleChange} value={values.time} />
+            </div>
+          </div>
+          <div className={styles.itemform_row}>
+            <div>
+              <Button onClick={handleCancel}>PERUUTA</Button>
+            </div>
+            <div>
+              <Button primary type='submit'>LISÄÄ</Button>
             </div>
           </div>
         </div>
