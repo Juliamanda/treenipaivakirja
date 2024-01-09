@@ -19,25 +19,25 @@ function ItemForm(props) {
           </div>
           <div className={styles.itemform_row}>
             <div>
-              <label htmlFor='set'>Sarjat</label>
-              <input type='text' name='set' />
-            </div>
-            <div>
               <label htmlFor='repeat'>Toistot</label>
               <input type='text' name='repeat' />
             </div>
-          </div>
-          <div className={styles.itemform_row}>
             <div>
               <label htmlFor='weight'>Painot</label>
               <input type='text' name='weight' />
             </div>
-            <div>
-              <label htmlFor='date'>Päivämäärä</label>
-              <input type='date' name='date' />
+          </div>
+          <div className={styles.itemform_row}>
+          <div>
+              <label htmlFor='set'>Sarjat</label>
+              <input type='text' name='set' />
             </div>
           </div>
           <div className={styles.itemform_row}>
+          <div>
+              <label htmlFor='date'>Päivämäärä</label>
+              <input type='date' name='date' />
+            </div>
             <div>
               <label htmlFor='time'>Aloitusaika</label>
               <input type='text' name='time' />
