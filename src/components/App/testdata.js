@@ -5,7 +5,8 @@ const testdata = [
       set:         "2",
       date:        "2023-03-20",
       repeat:      "12",
-      wight:       "60",
+      weight:      "60",
+      time:        "12:00"
     },
     {
       id:          "2",
@@ -13,7 +14,8 @@ const testdata = [
       set:         "3",
       date:        "2023-04-20",
       repeat:      "10",
-      wight:       "70",
+      weight:      "70",
+      time:        "20:00"
     },
     {
       id:          "3",
@@ -21,7 +23,8 @@ const testdata = [
       set:         "3",
       date:        "2023-03-19",
       repeat:      "15",
-      wight:       "20",
+      weight:      "20",
+      time:        "17:00"
     },  
     {
       id:          "4",
@@ -29,7 +32,8 @@ const testdata = [
       set:         "4",
       date:        "2023-03-19",
       repeat:      "13",
-      wight:       "25",
+      weight:      "25",
+      time:        "17:00"
     },
     {
       id:          "5",
@@ -37,7 +41,8 @@ const testdata = [
       set:         "4",
       date:        "2023-03-20",
       repeat:      "8",
-      wight:       "65",
+      weight:      "65",
+      time:        "12:00"
     },
     {
       id:          "6",
@@ -45,7 +50,8 @@ const testdata = [
       set:         "4",
       date:        "2023-04-20",
       repeat:      "10",
-      wight:       "50",
+      weight:      "50",
+      time:        "20:00"
     } 
   ]
   
