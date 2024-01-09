@@ -16,12 +16,12 @@
   }
 
   // Tämä asettelee oikealla puolella olevien elementtien tasauksen oikeaan reunaan.
-.item_weight, .item_repeat {
+.item_set, .item_repeat {
     text-align: right;
   } 
 
 // Tämä määrittelee tapahtuman ensimmäisen rivin tekstivärin sekä lihavoi tekstin.
-.item_type, .item_weight {
+.item_type, .item_set {
     color: $color-neutral-darkest;
     font-weight: bold;
   }
