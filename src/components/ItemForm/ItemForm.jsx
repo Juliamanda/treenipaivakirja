@@ -56,7 +56,7 @@ function ItemForm(props) {
             </div>
             <div>
               <label htmlFor='weight'>Painot</label>
-              <input type='text' name='weight' onChange={handleChange} value={values.weight} />
+              <input type='number' name='weight' onChange={handleChange} value={values.weight} />
             </div>
           </div>
           <div className={styles.itemform_row}>
