@@ -7,7 +7,10 @@ function ItemForm(props) {
   const navigate = useNavigate()
 
   const submit = () => {
-    props.onItemSubmit(values)
+    let storedValues = Object.assign({}, values)
+    storedValues.amount = parseFloat(storedValues.amount)
+    storedValues.id = crypto.randomUUID()
+    props.onItemSubmit(storedValues)
     navigate(-1)
   }
 
