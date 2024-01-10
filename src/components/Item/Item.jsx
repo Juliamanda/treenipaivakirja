@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './Item.module.scss'
 import { MdNavigateNext } from 'react-icons/md'
 
@@ -22,7 +23,7 @@ function Item({data, ...props}) {
             <div className={styles.item_sum}>{sum + " " + "kg"}</div>
           </div>
           <div className={styles.item_edit}>
-            <MdNavigateNext />
+            <Link to={"/edit/" + data.id}><MdNavigateNext /></Link>
           </div>
         </div>
       )
