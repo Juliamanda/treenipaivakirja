@@ -16,9 +16,9 @@ function ItemForm(props) {
 
   const initialState = props.formData ? props.formData : {
     type: "",
-    repeat: "",
-    weight: "",
-    set: "",
+    repeat: 0,
+    weight: 0,
+    set: 0,
     date: "",
     time: ""
   }
