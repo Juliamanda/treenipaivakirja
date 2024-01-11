@@ -52,7 +52,7 @@ function ItemForm(props) {
           <div className={styles.itemform_row}>
             <div>
               <label htmlFor='repeat'>Toistot</label>
-              <input type='text' name='repeat' onChange={handleChange} value={values.repeat}/>
+              <input type='number' name='repeat' onChange={handleChange} value={values.repeat}/>
             </div>
             <div>
               <label htmlFor='weight'>Painot</label>
@@ -62,7 +62,7 @@ function ItemForm(props) {
           <div className={styles.itemform_row}>
           <div>
               <label htmlFor='set'>Sarjat</label>
-              <input type='text' name='set' onChange={handleChange} value={values.set}/>
+              <input type='number' name='set' onChange={handleChange} value={values.set}/>
             </div>
           </div>
           <div className={styles.itemform_row}>
