@@ -57,6 +57,7 @@ function Stats(props) {
         <Line
           type="monotone"
           dataKey="weight"
+          stroke="#7485a3"
           name={`${type} Painot`}
           dot={false}
         />
