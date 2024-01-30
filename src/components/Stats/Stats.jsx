@@ -1,79 +1,69 @@
-import { LabelList, Legend, Pie, PieChart } from 'recharts'
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import styles from './Stats.module.scss'
 import { Cell } from 'recharts'
 import randomColor from 'randomcolor'
+import useLocalStorage from '../../shared/uselocalstorage'
 
 function Stats(props) {
 
-  const locale = "fi-FI"
+  const locale = "fi-FI";
+  const numberFormat = new Intl.NumberFormat(locale);
+
+  const [type, setType] = useLocalStorage('selectedType');
+    const handleChange = (event) => {
+      const { value } = event.target;
+      setType(value);
+    };
   
-  const linedata = props.data.map(
-    (item) => ({
+    const kehitysData = props.data
+    .filter(item => item.type === type)
+    .map(item => ({
       date: new Date(item.date).getTime(),
       weight: item.weight
-    })
-  )
-
-  const reducer = (resultData, item) => {
-    // Selvitetään löytyykö käsittelyn alla olevan alkion kulutyyppi
-    // jo tulostaulukosta.
-    const index = resultData.findIndex(arrayItem => arrayItem.type === item.type)
-    if (index >= 0) {
-      // Kulutyyppi löytyy tulostaulukosta, kasvatetaan kokonaissummaa.
-      resultData[index].weight = resultData[index].weight + item.weight
-    } else {
-      // Kulutyyppi ei löytynyt tulostaulukosta, lisätään se sinne.
-      resultData.push({type: item.type, weight: item.weight})
-    }
-    // Palautetaan tulostaulukko.
-    return resultData
-  }
-
-  const piedata = props.data.reduce(reducer, [])
-  
-  const piecolors = randomColor({ count: piedata.length, 
-    seed: 'siemenluku', 
-    hue: 'red' })
+    }));
 
   return (
     <div className={styles.stats}>
-            <h2>Tilastot</h2>
-            <h3>Kulut aikajanalla</h3>
-      <ResponsiveContainer height={350}>
-        <LineChart data={linedata}>
-          <Line dataKey='weight' />
-          <XAxis type='number'  
-                 dataKey='date' 
-                 domain={['dataMin','dataMax']}
-                 tickFormatter={
-                   value => new Date(value).toLocaleDateString(locale)
-                 } />
-          <YAxis />
-          <Tooltip labelFormatter={ 
-                     value => new Date(value).toLocaleDateString(locale)
-                   } />
-        </LineChart>
-      </ResponsiveContainer>
+    <h2>Tilastot</h2>
+    <br></br>
+    <label htmlFor='type'>Liike </label>
+    <select name='type' onChange={handleChange} value={type}>
+      <option value='Maastaveto'>Maastaveto</option>
+      <option value='Jalkaprässi'>Jalkaprässi</option>
+      <option value='Kulmasoutu'>Kulmasoutu</option>
+      <option value='Pystypunnerrus'>Pystypunnerrus</option>
+      <option value='Kyykky'>Kyykky</option>
+      <option value='SJMV'>SJMV</option>
+      <option value='Ylätalja'>Ylätalja</option>
+    </select>
 
-      <h3>Kulut kulutyypeittäin</h3>
-      <ResponsiveContainer height={350}>
-      <PieChart>
-          <Pie data={piedata} dataKey='weight' nameKey='type'>
-            <LabelList dataKey='weight' 
-                       position='inside' 
-                       /> 
-            { piecolors.map( color => <Cell fill={color} key={color} />)}
-          </Pie>
-          <Legend />
-          <Tooltip />
-        </PieChart>
-
-      </ResponsiveContainer>   
-
-
-    </div>
-  )
+    <h3>{type} kehitys</h3>
+    <ResponsiveContainer height={350}>
+      <LineChart data={kehitysData}>
+        <XAxis
+          type='number'
+          dataKey='date'
+          domain={['dataMin', 'dataMax']}
+          tickFormatter={value => new Date(value).toLocaleDateString(locale)}
+        />
+        <YAxis
+          domain={['dataMin', 'dataMax + 20']}
+          allowDataOverflow={true}
+        />
+        <Tooltip
+          labelFormatter={value => new Date(value).toLocaleDateString(locale)}
+          formatter={value => [numberFormat.format(value), "painot kg"]}
+        />
+        <Line
+          type="monotone"
+          dataKey="weight"
+          name={`${type} Painot`}
+          dot={false}
+        />
+      </LineChart>
+    </ResponsiveContainer>
+  </div>
+);
 }
 
 export default Stats
