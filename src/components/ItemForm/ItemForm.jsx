@@ -41,7 +41,7 @@ function ItemForm(props) {
         <div className={styles.itemform_row}>
             <div>
             <label htmlFor='type'>Liike</label>
-            <select name='type' onChange={handleChange} value={values.type}>
+            <select id='type' name='type' onChange={handleChange} value={values.type}>
                 <option value="">(valitse)</option>
                 { props.typelist.map(
                   type => <option key={type}>{type}</option>
@@ -52,27 +52,27 @@ function ItemForm(props) {
           <div className={styles.itemform_row}>
             <div>
               <label htmlFor='repeat'>Toistot</label>
-              <input type='number' name='repeat' onChange={handleChange} value={values.repeat}/>
+              <input id='repeat' type='number' name='repeat' onChange={handleChange} value={values.repeat}/>
             </div>
             <div>
               <label htmlFor='weight'>Painot</label>
-              <input type='number' name='weight' onChange={handleChange} value={values.weight} />
+              <input id='weight' type='number' name='weight' onChange={handleChange} value={values.weight} />
             </div>
           </div>
           <div className={styles.itemform_row}>
           <div>
               <label htmlFor='set'>Sarjat</label>
-              <input type='number' name='set' onChange={handleChange} value={values.set}/>
+              <input id='set' type='number' name='set' onChange={handleChange} value={values.set}/>
             </div>
           </div>
           <div className={styles.itemform_row}>
           <div>
               <label htmlFor='date'>Päivämäärä</label>
-              <input type='date' name='date' onChange={handleChange} value={values.date} />
+              <input id='date' type='date' name='date' onChange={handleChange} value={values.date} />
             </div>
             <div>
               <label htmlFor='time'>Aloitusaika</label>
-              <input type='text' name='time' onChange={handleChange} value={values.time} />
+              <input id='time' type='text' name='time' onChange={handleChange} value={values.time} />
             </div>
           </div>
           <div className={styles.itemform_row}>
