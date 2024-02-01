@@ -13,7 +13,12 @@ function Settings(props) {
   return (
     <div className={styles.settings}>
       <h2>Asetukset</h2>
+      <br></br>
+      <p>Lisäämällä liikkeen valikkoon pääset käyttämään sitä treenien kirjauksissa 
+        sekä saat käyttöön kehityskaavion lisätyn liikkeen osalta.</p>
+      <br></br>
       <h3>Liikkeet</h3>
+      <br></br>
       <div className={styles.settings_types}>
         { props.typelist.map(
             type => <div key={type}>{type}</div>

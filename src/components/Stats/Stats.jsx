@@ -24,8 +24,9 @@ function Stats(props) {
 
   return (
     <div className={styles.stats}>
-    <h2>Tilastot</h2>
+    <h2>Kehityskäyrät</h2>
     <br></br>
+    
     <label htmlFor='type'>Liike </label>
     <select name='type' onChange={handleChange} value={type}>
       <option value='Maastaveto'>Maastaveto</option>
@@ -36,7 +37,7 @@ function Stats(props) {
       <option value='SJMV'>SJMV</option>
       <option value='Ylätalja'>Ylätalja</option>
     </select>
-
+    
     <h3>{type} kehitys</h3>
     <ResponsiveContainer height={350}>
       <LineChart data={kehitysData}>
