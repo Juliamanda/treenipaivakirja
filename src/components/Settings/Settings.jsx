@@ -38,8 +38,7 @@ function Settings(props) {
       <h2>Asetukset</h2>
       <br></br>
       <p>
-        Lisäämällä liikkeen valikkoon pääset käyttämään sitä treenien kirjauksissa 
-        sekä saat käyttöön kehityskaavion lisätyn liikkeen osalta.
+        Lisäämällä liikkeen valikkoon pääset käyttämään sitä treenien kirjauksissa.
       </p>
       <br></br>
       <h3>Liikkeet</h3>
