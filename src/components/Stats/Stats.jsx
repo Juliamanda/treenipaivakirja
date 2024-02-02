@@ -1,7 +1,5 @@
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import styles from './Stats.module.scss'
-import { Cell } from 'recharts'
-import randomColor from 'randomcolor'
 import useLocalStorage from '../../shared/uselocalstorage'
 
 /**
@@ -52,12 +50,14 @@ function Stats(props) {
    * 
    * @constant {Array} kehitysData - Käyttäjän valitseman liiketyypin mukainen harjoitusdata.
    */
-  const kehitysData = props.data
-    .filter(item => item.type === type)
-    .map(item => ({
-      date: new Date(item.date).getTime(),
-      weight: item.weight
-    }));
+  const kehitysData = props.data && type
+  ? props.data
+      .filter(item => item.type === type)
+      .map(item => ({
+        date: new Date(item.date).getTime(),
+        weight: item.weight
+      }))
+  : [];
 
   /**
    * Renderöi komponentin käyttöliittymän.
